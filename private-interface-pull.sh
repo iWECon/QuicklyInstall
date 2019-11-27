@@ -1,10 +1,9 @@
 path=/www/docker/interface
 
-if [ -f "/www/docker/interface" ];then
-    git clone https://github.com/iWECon/flask.git $path
-    cd $path
-else
-    mkdir $path
+if [ -d "/www/docker/interface" ]; then
     cd $path
     git pull
+else
+    git clone https://github.com/iWECon/flask.git $path
+    cd $path
 fi
